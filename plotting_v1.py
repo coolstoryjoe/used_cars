@@ -81,3 +81,4 @@ def multi_plot_graph(*args):
         clf = SVR(kernel='rbf', C=5000,  epsilon=0.1)
     return     
 
+print('now this is updated')
