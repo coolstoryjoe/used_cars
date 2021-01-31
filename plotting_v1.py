@@ -59,13 +59,13 @@ def two_plot_graph(age1, price1, age2, price2):
     plt.show()
     return
 
-new_df = load_obj('Toyota_Exaple_DF')
+# new_df = load_obj('Toyota_Exaple_DF')
 #print(new_df, new_df['model'].unique())
 
-df_4 = new_df[new_df.model == '4Runner']
-df_TC = new_df[new_df.model == 'Tacoma']
+# df_4 = new_df[new_df.model == '4Runner']
+# df_TC = new_df[new_df.model == 'Tacoma']
 
-two_plot_graph(df_4.age, df_4.Price, df_TC.age, df_TC.Price)
+# two_plot_graph(df_4.age, df_4.Price, df_TC.age, df_TC.Price)
 
 # multi_plot_graph(df_4.age, df_4.Price, df_6.age, df_6.Price)
 # plot_graph(df.age,df.Price)
@@ -81,4 +81,3 @@ def multi_plot_graph(*args):
         clf = SVR(kernel='rbf', C=5000,  epsilon=0.1)
     return     
 
-print('now this is updated asdf')

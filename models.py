@@ -41,7 +41,6 @@ def save_obj(obj, name):
     with open(str(os.path.join(os.getcwd(), 'pickle_jar', str(name + '.pkl'))), 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
-
 def load_obj(name):
     with open(str(os.path.join(os.getcwd(), 'pickle_jar', str(name + '.pkl'))), 'rb') as f:
         return pickle.load(f)

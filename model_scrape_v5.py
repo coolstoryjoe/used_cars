@@ -107,15 +107,17 @@ def pull_master_price_list():
     make_model_dict = load_obj('Master_Keys')
     df = pd.DataFrame()
     for k , v in make_model_dict.items():
-        if k == 'Toyota':
-            for i in v:
-                if i == '4Runner' or i == 'Tacoma':
-                    print(k,i)
-            #     time.sleep(10)
-                    df = df.append(make_model_query(k, i))
-    save_obj(df,'Toyota_Exaple_DF')
+        for i in v:
+            time.sleep(10)
+            d = make_model_query(k, i)
+            if d is not None:
+                df = df.append(d)
+                #print('loaded... NEXT')
+    save_obj(df,'Master_File_v1')
     return 
 
-#pull_all_makes_and_models()
-
 pull_master_price_list()
+
+#df = load_obj('Acura_to_FIAT_TRAIL_DF')
+
+#print(df)

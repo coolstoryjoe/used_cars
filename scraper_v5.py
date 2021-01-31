@@ -104,10 +104,13 @@ def open_seseme():
 # create DataFrame of used car options based on make and model 
 def make_model_query(make,model):
     try:
+        print('opening... ' , make, model)
         pull_AutoTrader(create_url(make, model))
+        print('sucessful...')
+        df1 = open_seseme()
+        df1 = df1[df1.status == 'Used'].reset_index().drop(['index'], axis=1)
+        df1['Price'] = df1['Price'].str.replace(',', '').astype('int32')
+        return(df1)
     except:
         pass
-    df1 = open_seseme()
-    df1 = df1[df1.status == 'Used'].reset_index().drop(['index'], axis = 1)
-    df1['Price'] = df1['Price'].str.replace(',', '').astype('int32')
-    return(df1)
+    return None
