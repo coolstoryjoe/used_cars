@@ -1,6 +1,10 @@
 import pandas as pd
+import json
 from bs4 import BeautifulSoup as soup
 import os
+import time 
+
+# VARIOS SELENIUM LIBRARIES 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -9,10 +13,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
+
 from scraper_v5 import make_model_query
-import json
 from models import save_obj, load_obj, dump_csv_single_col, dump_csv, dump_file
-import time 
 
 ignored_exceptions = (NoSuchElementException, StaleElementReferenceException,)
 cwd = os.getcwd()
